@@ -26,7 +26,11 @@ let package = Package(
         // Targets can depend on other targets in this package, and on products in packages this package depends on.
         .target(
             name: "SwiftDemangle",
-            dependencies: []),
+            dependencies: [],
+            cSettings: [.define("ENABLE_BITCODE=YES")],
+            cxxSettings: [.define("ENABLE_BItCODE=YES")],
+            swiftSettings: [.define("ENABLE_BITCODE=YES")]
+        ),
         .testTarget(
             name: "SwiftDemangleTests",
             dependencies: ["SwiftDemangle"]),
