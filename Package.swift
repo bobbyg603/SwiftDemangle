@@ -27,9 +27,9 @@ let package = Package(
         .target(
             name: "SwiftDemangle",
             dependencies: [],
-            cSettings: [.define("ENABLE_BITCODE=YES")],
-            cxxSettings: [.define("ENABLE_BITCODE=YES")],
-            swiftSettings: [.define("ENABLE_BITCODE=YES")]
+            cSettings: [.define("ENABLE_BITCODE=YES"), .define("BITCODE_GENERATION_MODE=bitcode")],
+            cxxSettings: [.define("ENABLE_BITCODE=YES"), .define("BITCODE_GENERATION_MODE=bitcode")],
+            swiftSettings: [.define("ENABLE_BITCODE=YES"), .define("BITCODE_GENERATION_MODE=bitcode")]
         ),
         .testTarget(
             name: "SwiftDemangleTests",
